@@ -1,0 +1,66 @@
+<body class="text-md-center" style="background: rgb(255, 255, 255); width: 100%;">
+    
+    <header class="masthead" style="background: linear-gradient(to left, #00000000, #00000000), url(../assets/img/camp.jpg); padding: 20%; max-width:100%; height:auto; background-repeat:no-repeat;background-position: center;background-size: cover;  position: relative;">
+    
+
+
+        <div class="container vh-300">
+            <div class="row">
+                <div class="col-sm-12 " style="background-color:rgba(255, 255, 255, 0.63);padding: 20px;" >
+                    <form [formGroup]="DataForm" class="bg-dark booking-form" method="get" >
+                        <div class="col-md-12 col-sm-12" >
+                            <div class="field-holder" style="padding-left:40%">
+                                <label for="name" style="padding-right: 5%; font-size: 30px; color:rgb(0, 0, 0);">Name:</label>
+                                <input type="text" id="name" name="name" style="padding: 5px;" formControlName="Name" ><br><br>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12" >
+                            <div class="field-holder" style="padding-left:40%">
+                                <label for="min-age" style="padding-right: 1%; font-size: 30px; color:rgb(0, 0, 0);">Min Age:</label>
+                                <input type="text" id="min-age" name="min-age" style="padding: 5px;" formControlName="MinAge" ><br><br>
+                        </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12"style="padding-left:40%" >
+                            <div class="field-holder" >
+                                <label for="max-age" style="padding-right: 0.8%; font-size: 30px; color:rgb(0, 0, 0);">Max Age:</label>
+                                <input type="text" id="max-age" name="max-age" style="padding: 5px;" formControlName="MaxAge" ><br><br>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12" >
+                            <div class="field-holder" style="padding-left:40%">
+                                <label for="gender" style="padding-right: 4%; font-size: 30px; color:rgb(0, 0, 0);">Country</label>
+                                <select id='peeps' name='people' (click)="country()" (change)="selectChangeHandler($event)" formControlName="Country" [(ngModel)]="selectedLevel">
+                                    <option *ngFor="let item of data" [value]="item.country">
+                                      {{item.country}}
+                                    </option>    
+                                </select>
+                                <br><br>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12" >
+                            <div class="field-holder" style="padding-left:40%">
+                                <label for="gender" style="padding-right: 4%; font-size: 30px; color:rgb(0, 0, 0);">Gender:</label>
+                                <select name="cars" id="gender" style="padding: 5px; font-size: 16px;" (change)="selectChangeHandler($event)" formControlName="Gender" >
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                    
+                    
+
+                        <div id="trans" class="col-md-12 col-sm-12" style="margin-top:20px; padding-left: 50%;">
+                            <button class="btn active btn-primary" type="button" style="padding:10px; font-size: 24px;" (click)="Enroll()"> Kindly Enroll </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-12">
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+</body>
